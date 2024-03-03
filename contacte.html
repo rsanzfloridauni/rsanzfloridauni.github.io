@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àgora de Ciència</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estils.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                document.getElementById('menuContacte').className = "nav-link active";
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <main>
+
+        <div class="container text-center">
+            <h2 class="fw-light py-3" data-i18n="contacteTitol"></h2>
+            <h5 class="fw-light py-3" data-i18n="contacteDescripcio"></h5>
+        </div>
+        <div class="formulariContacteContenidor">
+            <div class="formulariContacte">
+                <label data-i18n="contacteNom"></label>
+                <input type="text" id="nom" name="nom" required>
+                <br>
+                <label data-i18n="contacteEmail"></label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label data-i18n="contacteMissatge"></label>
+                <textarea id="missatge" name="missatge" rows="4" required></textarea>
+                <br>
+                <div class="d-flex flex-row-reverse align-items-center">
+                    <input type="submit" data-i18n="contacteBotoEnviar" onclick="enviarFormulari()">
+                    <label style="padding-right: 30px; padding-left: 5px;" for="verificacioHumana"
+                        data-i18n="contacteCheckEnviar"></label>
+                    <input type="checkbox" name="verificacioHumana" id="verificacioHumana">
+                </div>
+            </div>
+        </div>
+
+        <div id="popupOk" class="popupOk">
+            <div class="popupOk-content">
+                <p data-i18n="contacteMissatgeOk"></p>
+                <button onclick="closePopupOk()" data-i18n="contacteMissatgeTancar"></button>
+            </div>
+        </div>
+
+        <div id="popupError" class="popupError">
+            <div class="popupError-content">
+                <p data-i18n="contacteMissatgeError"></p>
+                <button onclick="closePopupError()" data-i18n="contacteMissatgeTancar"></button>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="pt-5" id="footer-container"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+                return fetch('./js/utils.js');
+            })
+            .then(response => response.text())
+            .then(script => {
+                eval(script);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/language.js"></script>
+    <script src="./js/enviarFormulari.js"></script>
+    <script src="./js/popup.js"></script>
+
+</body>
+
+</html>

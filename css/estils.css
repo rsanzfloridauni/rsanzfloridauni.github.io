@@ -1,0 +1,218 @@
+.avis-legal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.avis-contingut {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.avis-contingut h2 {
+    margin-top: 0;
+}
+
+.politica-privacitat {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.politica-contingut {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.politica-contingut h2 {
+    margin-top: 0;
+}
+
+.tancar-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.logoxarxes:hover {
+    opacity: 0.5;
+}
+
+.carousel-container {
+    padding-bottom: 30px;
+}
+
+.carousel_items {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel_item {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transition: all 0.5s linear;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.contenedor_agenda {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.event_agenda {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.card-membres {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    border: none;
+}
+
+.card-membres img {
+    padding-top: 10px;
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.card-container-membres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container-membres-socis {
+    display: inline-flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulariContacteContenidor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulariContacte {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.formulariContacte input[type="text"],
+.formulariContacte input[type="email"],
+.formulariContacte textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.formulariContacte input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+}
+
+.formulariContacte input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.popupOk {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.popupOk-content {
+    background-color: white;
+    width: 25%;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popupError {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.popupError-content {
+    background-color: white;
+    width: 25%;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}

@@ -1,7 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àgora de Ciència</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estils.css">
+</head>
+
 <body>
-<h1>Hola Irene i Alex!</h1>
-<p>Què tal el dia?</p>
+
+    <div id="header-container"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                document.getElementById('menuInici').className = "nav-link active";
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <main>
+
+        <div class="carousel-container">
+            <div class="carousel_items">
+                <div class="carousel_item">
+                    <img src="./img/microscopi.jpg" alt="Slide 1">
+                </div>
+                <div class="carousel_item">
+                    <img src="./img/nebula01.jpg" alt="Slide 2">
+                </div>
+                <div class="carousel_item">
+                    <img src="./img/xips.jpg" alt="Slide 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center py-3 col-6 bg-primary-subtle rounded-circle"
+            style="background-image: url(./img/estructura-atomica-blanc.png); background-size: 300px; background-position: center; background-repeat: no-repeat;">
+            <h1 class="fw-light" data-i18n="presentacioTitol"></h1>
+            <p class="lead text-body-secondary" data-i18n="presentacioCos"></p>
+        </div>
+
+        <div class="text-center pt-5 container">
+            <h1 class="fw-light" data-i18n="agendaTitol"></h1>
+        </div>
+
+        <div class="contenedor_agenda">
+            <div class="event_agenda">
+                <img src="./img/club_lectura.png" height="350">
+                <div style="padding-left: 10px;">
+                    <p class="text-justify lead text-body-secondary" data-i18n="agendaTitolActivitat1"></p>
+                    <p class="text-justify card-text" data-i18n="agendaDescripcioActivitat1"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center pt-5 container">
+            <h1 class="fw-light" data-i18n="activitatsIniciTitol"></h1>
+        </div>
+
+        <div class="album pt-3">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <a href="activitats.html#ultimaActivitat" onclick="scrollToSection('seccion_objetivo')"
+                                class="nav-link">
+                                <img src="./img/nebula01.jpg" class="img-fluid">
+                            </a>
+                            <div class="card-body">
+                                <p class="text-center lead text-body-secondary" data-i18n="activitatsUltima"></p>
+                                <p class="text-center card-text" data-i18n="activitatsUltimaDesc"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <a href="activitats.html#penultimaActivitat" onclick="scrollToSection('penultimaActivitat')"
+                                class="nav-link">
+                                <img src="./img/nebula01.jpg" class="img-fluid">
+                            </a>
+                            <div class="card-body">
+                                <p class="text-center lead text-body-secondary" data-i18n="activitatsPenultima"></p>
+                                <p class="text-center card-text" data-i18n="activitatsPenultimaDesc"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <a href="activitats.html#antepenultimaActivitat"
+                                onclick="scrollToSection('antepenultimaActivitat')" class="nav-link">
+                                <img src="./img/nebula01.jpg" class="img-fluid">
+                            </a>
+                            <div class="card-body">
+                                <p class="text-center lead text-body-secondary" data-i18n="activitatsAntepenultima"></p>
+                                <p class="text-center card-text" data-i18n="activitatsAntepenultimaDesc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center container pt-3">
+            <a href="activitats.html">
+                <p class="fw-light" data-i18n="activitatsVeureMes"></p>
+            </a>
+        </div>
+
+
+        <div class="text-center py-3 container">
+            <h2 class="fw-light py-3" data-i18n="colaboradorsTitol"></h2>
+            <div class="container py-3">
+                <a href="https://www.picanya.org" target="_blank" class="nav-link"><img
+                        src="./img/ajuntament_picanya.jpg" height="70" /></a>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+                return fetch('./js/utils.js');
+            })
+            .then(response => response.text())
+            .then(script => {
+                eval(script);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/carrusel.js"></script>
+    <script src="./js/language.js"></script>
+    <script src="./js/scrollActivitats.js"></script>
+
 </body>
+
 </html>
